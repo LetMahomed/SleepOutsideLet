@@ -45,11 +45,8 @@ export function renderListWithTemplate(
  * Template function that returns the HTML for a product card.
  */
 export function productCardTemplate(product) {
-  // Adjust image path if it starts with ".."
-  let imageUrl = product.Image;
-  if (imageUrl.startsWith("..")) {
-    imageUrl = imageUrl.replace("..", "");
-  }
+  // Use the PrimaryMedium image provided by the API
+  let imageUrl = product.Images.PrimaryLarge;
   return `<li class="product-card">
     <a href="/product_pages/index.html?id=${product.Id}">
       <img src="${imageUrl}" alt="Image of ${product.Name}" />
@@ -59,6 +56,7 @@ export function productCardTemplate(product) {
     </a>
   </li>`;
 }
+
 
 export function renderWithTemplate(
   templateFn,
@@ -88,3 +86,9 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement)
   renderWithTemplate(footerTemplate, footerElement);
 }
+
+export function getParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+

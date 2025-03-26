@@ -4,8 +4,8 @@ import ProductData from "./ProductData.mjs";
 // Load header and footer
 loadHeaderFooter();
 
-// Create an instance of ProductData for the "tents" category
-const dataSource = new ProductData("tents");
+// Create an instance of ProductData (no preset category)
+const dataSource = new ProductData();
 
 async function renderProductDetail() {
   // Retrieve the product id from the URL query string (e.g., ?id=880RR)
@@ -24,13 +24,12 @@ async function renderProductDetail() {
       productDetailEl.innerHTML = "<p>Product not found.</p>";
       return;
     }
-    // Use the JSON properties to fill in the detail template.
-    // Assume the first color in the Colors array is used.
+
     const color = product.Colors && product.Colors.length > 0 ? product.Colors[0].ColorName : "";
     productDetailEl.innerHTML = `
       <h3>${product.Brand.Name}</h3>
       <h2 class="divider">${product.NameWithoutBrand}</h2>
-      <img class="divider" src="${product.Image.replace("..", "")}" alt="Image of ${product.Name}" />
+      <img class="divider" src="${product.Images.PrimaryLarge}" alt="Image of ${product.Name}" />
       <p class="product-card__price">$${product.FinalPrice.toFixed(2)}</p>
       <p class="product__color">${color}</p>
       <p class="product__description">${product.DescriptionHtmlSimple}</p>

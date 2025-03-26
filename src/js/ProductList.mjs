@@ -9,15 +9,20 @@ export default class ProductList {
 
   async init() {
     try {
-      const products = await this.dataSource.getData();
-      // If the JSON items don’t have a "category" property, this filter will include all items.
+      // Pass category to getData.
+      const products = await this.dataSource.getData(this.category);
+      
       const filteredProducts = products.filter((product) => {
         if (this.category && product.category) {
           return product.category === this.category;
         }
         return true;
       });
-      renderListWithTemplate(productCardTemplate, this.listElement, filteredProducts);
+      renderListWithTemplate(
+        productCardTemplate,
+        this.listElement,
+        filteredProducts
+      );
     } catch (error) {
       console.error("Error fetching product data:", error);
     }

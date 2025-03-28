@@ -232,6 +232,103 @@ button {
   grid-column: 3;
 }
 
+/* Hide the cart-footer by default */
+.hide {
+  display: none;
+}
+
+/* Style the cart footer */
+.cart-footer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: right;
+  border-top: 2px solid #ccc;
+}
+
+.cart-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: green;
+}
+
+/* Checkout button */
+.checkout-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
+}
+
+
+/* Checkout Page Styles */
+.checkout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checkout h2, .checkout h3 {
+  text-align: center;
+}
+
+.checkout section {
+  margin-bottom: 20px;
+}
+
+.checkout p {
+  font-size: 16px;
+}
+
+.checkout label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.checkout input {
+  padding: 8px;
+  width: 100%;
+  margin: 5px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+.checkout input:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+.checkout .checkout-actions {
+  text-align: center;
+}
+
+#checkout-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#checkout-button:hover {
+  background-color: #218838;
+}
+
+/* Style for empty fields (error highlighting) */
+input:invalid {
+  border-color: red;
+}
+
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

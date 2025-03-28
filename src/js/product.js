@@ -1,5 +1,5 @@
 import { qs, getLocalStorage, setLocalStorage, loadHeaderFooter } from "./utils.mjs";
-import ProductData from "./ProductData.mjs";
+import ProductData from "./ExternalServices.mjs";
 
 // Load header and footer
 loadHeaderFooter();

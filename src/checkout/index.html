@@ -11,9 +11,66 @@
     <header class="divider" id="main-header"></header>
 
     <main class="divider">
-      <section class="products">
-        <h2>Review & Place your Order</h2>
-        <!-- Order review content can be added here -->
+      <section class="checkout">
+        <h2>Review & Place Your Order</h2>
+
+        <!-- Customer Information Form -->
+        <form id="checkout-form">
+          <h2>Customer Information</h2>
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            required
+          />
+          <input type="text" name="lastName" placeholder="Last Name" required />
+          <input
+            type="text"
+            name="streetAddress"
+            placeholder="Street Address"
+            required
+          />
+          <input type="text" name="city" placeholder="City" required />
+          <input type="text" name="state" placeholder="State" required />
+          <input type="text" name="zipCode" placeholder="Zip Code" required />
+
+          <h2>Payment Information</h2>
+          <input
+            type="text"
+            name="cardNumber"
+            placeholder="Credit Card Number"
+            required
+            title="1234123412341235"
+          />
+          <input
+            type="text"
+            name="expirationDate"
+            placeholder="Expiration Date"
+            required
+            title="Enter any future date"
+          />
+          <input
+            type="text"
+            name="securityCode"
+            placeholder="Security Code"
+            required
+            title="123"
+          />
+
+          <button type="submit" id="checkout-button">Checkout</button>
+        </form>
+        <div id="feedback" role="alert"></div>
+
+        <!-- Order Summary -->
+        <section class="order-summary">
+          <h3>Order Summary</h3>
+          <p><strong>Subtotal: </strong><span id="subtotal">$100.00</span></p>
+          <p><strong>Tax: </strong><span id="tax">$10.00</span></p>
+          <p>
+            <strong>Shipping Estimate: </strong><span id="shipping">$5.00</span>
+          </p>
+          <p><strong>Total: </strong><span id="order-total">$115.00</span></p>
+        </section>
       </section>
     </main>
 

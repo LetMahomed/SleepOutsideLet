@@ -7,6 +7,8 @@
 
  - https://byui-cse.github.io/wdd330-ww-course/week01/team.html
 
+[Netlify link](https://fantastic-alpaca-d110db.netlify.app/)
+
 ### Prerequisites
 
 - You must have Node installed to run the following commands.

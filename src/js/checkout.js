@@ -101,18 +101,22 @@ checkoutForm.addEventListener("submit", function (event) {
 
   // Proceed with the checkout process
   checkoutProcess
-    .checkout(checkoutForm)
-    .then((response) => {
-      // On success, show a success message
-      feedbackElement.textContent = "Order submitted successfully!";
-      feedbackElement.style.color = "green";
-      // Optionally, clear the cart here (e.g., localStorage.removeItem("so-cart"))
-    })
-    .catch((error) => {
-      // Display a generic error message on failure
-      feedbackElement.textContent =
-        "There was an error submitting your order. Please try again.";
-      feedbackElement.style.color = "red";
-      console.error("Error submitting order:", error);
-    });
+  .checkout(checkoutForm)
+  .then((response) => {
+    feedbackElement.textContent = "Order submitted successfully!";
+    feedbackElement.style.color = "green";
+    // Clear the cart from localStorage
+    localStorage.removeItem("so-cart");
+    // Redirect to thank you page after a short delay (e.g., 2 seconds)
+    setTimeout(() => {
+      window.location.href = "../thankyou/index.html";
+    }, 2000);
+  })
+  .catch((error) => {
+    feedbackElement.textContent =
+      "There was an error submitting your order. Please try again.";
+    feedbackElement.style.color = "red";
+    console.error("Error submitting order:", error);
+  });
+
 });
